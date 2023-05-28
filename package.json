@@ -1,0 +1,32 @@
+{
+  "name": "app_created",
+  "version": "1.0.0",
+  "description": "test app electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bash start.sh",
+    "dev": "bash dev.sh",
+    "maj": "bash maj.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Youritch/app_created.git"
+  },
+  "keywords": [
+    "app",
+    "electron"
+  ],
+  "author": "Youritch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Youritch/app_created/issues"
+  },
+  "homepage": "https://github.com/Youritch/app_created#readme",
+  "devDependencies": {
+    "electron": "^24.4.0"
+  },
+  "dependencies": {
+    "electronmon": "^2.0.2"
+  }
+}
