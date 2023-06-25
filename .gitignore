@@ -131,3 +131,4 @@ dist
 
 # other
 test/
+.DS_store
