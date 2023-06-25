@@ -1,0 +1,8 @@
+#popup-zone {
+	position: absolute;
+	width: 100%;
+	flex: content;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
