@@ -16,6 +16,7 @@ window.electronAPI.addEventListener("load", async (event) => {
 	);
 	window.electronAPI.load();
 });
+
 function popup(type, title, message) {
 	let color = {
 		error: "red",
@@ -41,14 +42,20 @@ function popup(type, title, message) {
 		document.getElementById(title).remove();
 		popup.removeEventListener("click", (event) => {
 			document.getElementById(title).remove();
+			clearTimeout(t);
 		});
 	}, 5000);
 	popup.addEventListener("click", (event) => {
 		document.getElementById(title).remove();
 		clearTimeout(t);
 	});
+	let notif = new window.Notification(title, {body: message});
+	notif.onclick = () => {
+		window.electronAPI.send();
+	};
 }
-window.electronAPI.addEventListener("popup", async (event, { type, title, message }) => {
+
+window.electronAPI.addEventListener("popup", async (event, {type, title, message}) => {
 	popup(type, title, message);
 });
 document.addEventListener("DOMContentLoaded", () => {

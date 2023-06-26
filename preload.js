@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require("electron");
+const {contextBridge, ipcRenderer} = require("electron");
 
 contextBridge.exposeInMainWorld("electronAPI", {
 	setTitle: (title) => ipcRenderer.send("set-title", title),
@@ -26,6 +26,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	},
 	emit: (name, data = {}) => {
 		console.log(`Emited ${name} (from preload) with data : ${JSON.stringify(data)}`);
-		return ipcRenderer.invoke("emit", { name: name, data: data });
+		return ipcRenderer.invoke("emit", {name: name, data: data});
 	},
 });
