@@ -98,8 +98,9 @@ const createWindow = () => {
 			submenu: [
 				{
 					click: () => {
-						if (win.webContents.isDevToolsOpened()) return win.webContents.closeDevTools();
-						return win.webContents.openDevTools();
+						let winDevTool = BrowserWindow.getFocusedWindow();
+						if (winDevTool.webContents.isDevToolsOpened()) return winDevTool.webContents.closeDevTools();
+						return winDevTool.webContents.openDevTools();
 					},
 					label: "Dev Tools",
 					accelerator: process.platform === "darwin" ? "Alt+Cmd+I" : "Alt+Shift+I",
